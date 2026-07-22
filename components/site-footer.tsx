@@ -21,7 +21,7 @@ const FOOTER_COLUMNS = [
 	{
 		heading: "COMMUNITY",
 		links: [
-			{ href: "https://github.com/BaudBound/BaudBound", label: "GitHub" },
+			{ href: "https://github.com/BaudBound/baudbound", label: "GitHub" },
 			{ href: "https://wiki.baudbound.app/licensing", label: "Licensing" },
 		],
 	},

@@ -6,7 +6,7 @@ import { buttonVariants } from "@/components/ui/button";
 const NAV_LINKS = [
 	{ href: "https://wiki.baudbound.app", label: "Wiki" },
 	{ href: "https://editor.baudbound.app", label: "Editor" },
-	{ href: "https://github.com/BaudBound/BaudBound", label: "GitHub" },
+	{ href: "https://github.com/BaudBound/baudbound", label: "GitHub" },
 ];
 
 function Wordmark() {
