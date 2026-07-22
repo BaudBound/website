@@ -66,7 +66,7 @@ export default function PrivacyPage() {
 							<p>
 								If you have questions about this policy or want to raise a concern, open an issue on{" "}
 								<a
-									href="https://github.com/NATroutter/BaudBound"
+									href="https://github.com/BaudBound/BaudBound"
 									target="_blank"
 									rel="noopener noreferrer"
 									className="text-foreground underline underline-offset-4 hover:text-brand"

@@ -1,6 +1,6 @@
 services:
   website:
-    image: ghcr.io/natroutter/baudbound-website:latest
+    image: ghcr.io/baudbound/website:latest
     container_name: baudbound-website
     restart: unless-stopped
     ports:
