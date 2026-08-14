@@ -5,14 +5,17 @@ import { ShowcaseSection } from "@/components/showcase-section";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
 import { TrustSection } from "@/components/trust-section";
+import { getHomeContent } from "@/lib/site-content";
 
-export default function Home() {
+export default async function Home() {
+	const content = await getHomeContent();
+
 	return (
 		<>
 			<SiteHeader />
 			<main>
 				<Hero />
-				<ShowcaseSection />
+				<ShowcaseSection content={content} />
 				<HowItWorks />
 				<FeatureGrid />
 				<TrustSection />

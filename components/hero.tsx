@@ -27,7 +27,7 @@ export function Hero() {
 					rel="noopener noreferrer"
 					className="text-[15px] font-semibold text-foreground transition-colors hover:text-brand"
 				>
-					Open the Editor →
+					Open the Editor -&gt;
 				</a>
 				<a
 					href="https://wiki.baudbound.app"
@@ -35,7 +35,7 @@ export function Hero() {
 					rel="noopener noreferrer"
 					className="text-[15px] font-semibold text-muted-foreground transition-colors hover:text-foreground"
 				>
-					Read the Wiki →
+					Read the Wiki -&gt;
 				</a>
 			</div>
 		</section>

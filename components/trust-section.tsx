@@ -1,7 +1,7 @@
 import { SectionHeading } from "@/components/section-heading";
 import { cn } from "@/lib/utils";
 
-const POINTS: { shape: "square" | "circle" | "diamond"; title: string; description: string }[] = [
+const POINTS: { shape: "circle" | "diamond" | "square"; title: string; description: string }[] = [
 	{
 		shape: "square",
 		title: "Local execution",
