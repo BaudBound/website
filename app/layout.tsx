@@ -1,6 +1,11 @@
 import type { Metadata, Viewport } from "next";
 import { Inter, JetBrains_Mono } from "next/font/google";
+import { cookies } from "next/headers";
 import Script from "next/script";
+
+import { AnnouncementBanner } from "@/components/announcement-banner";
+import { announcementDismissCookieName, decodeDismissedAnnouncementKey } from "@/lib/announcement-dismissal";
+import { getCurrentAnnouncement } from "@/lib/announcements";
 
 import "../styles/globals.css";
 
@@ -107,7 +112,7 @@ export const viewport: Viewport = {
 	themeColor: brandColor,
 };
 
-export default function RootLayout({
+export default async function RootLayout({
 	children,
 }: Readonly<{
 	children: React.ReactNode;
@@ -115,10 +120,18 @@ export default function RootLayout({
 	const umamiTrackerSrc = process.env.UMAMI_TRACKER_SRC;
 	const umamiRecorderSrc = process.env.UMAMI_RECORDER_SRC;
 	const umamiWebsiteId = process.env.UMAMI_WEBSITE_ID;
+	const announcement = await getCurrentAnnouncement();
+	const cookieStore = await cookies();
+	const dismissedAnnouncementKey = decodeDismissedAnnouncementKey(
+		cookieStore.get(announcementDismissCookieName)?.value,
+	);
+	const isAnnouncementDismissed =
+		announcement?.dismissable === true && announcement.dismissKey === dismissedAnnouncementKey;
 
 	return (
 		<html lang="en" className={`${inter.variable} ${jetbrainsMono.variable}`}>
 			<body className="font-sans antialiased">
+				<AnnouncementBanner announcement={announcement} initiallyDismissed={isAnnouncementDismissed} />
 				{children}
 				{umamiTrackerSrc && umamiWebsiteId && (
 					<Script src={umamiTrackerSrc} data-website-id={umamiWebsiteId} strategy="afterInteractive" />

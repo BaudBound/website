@@ -7,6 +7,12 @@ const nextConfig: NextConfig = {
 	},
 	images: {
 		qualities: [75, 100],
+		remotePatterns: [
+			{
+				hostname: "api.baudbound.app",
+				protocol: "https",
+			},
+		],
 	},
 };
 
